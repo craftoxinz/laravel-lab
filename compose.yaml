@@ -1,0 +1,15 @@
+name: classroom-monorepo
+
+services:
+    db:
+        image: mysql
+        ports:
+            - "${DB_PORT}:3306"
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        environment:
+            - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+            - MYSQL_DATABASE=${DB_PASSWORD}
+
+volumes:
+    pgdata:
