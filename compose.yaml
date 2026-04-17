@@ -1,4 +1,4 @@
-name: classroom-monorepo
+name: laravel-lab
 
 services:
     db:
@@ -9,7 +9,7 @@ services:
             - pgdata:/var/lib/postgresql/data
         environment:
             - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-            - MYSQL_DATABASE=${DB_PASSWORD}
+            - MYSQL_DATABASE=${DB_DATABASE}
 
 volumes:
     pgdata:
