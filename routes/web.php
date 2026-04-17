@@ -10,3 +10,7 @@ Route::get('/', function () {
 Route::get('/me', function () {
     return 'Randie Syaeful Azahli';
 });
+
+Route::get('/users/{id}', function (string $id) {
+    return "User profile with id: $id";
+});
