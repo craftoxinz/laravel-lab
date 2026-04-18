@@ -16,5 +16,10 @@ Route::get('/users/{id}', function (string $id) {
     return "User profile with id: $id";
 });
 
+// Define GET route with optional parameter
+Route::get('/product/{slug?}', function (string $slug = 'new-products') {
+    return "Show: $slug";
+});
+
 // Define GET route using view routes
 Route::view('/test', 'test');
