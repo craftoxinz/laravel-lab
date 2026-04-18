@@ -25,5 +25,5 @@ Route::get('/product/{slug?}', function (string $slug = 'new-products') {
 // Define GET route using view routes
 Route::view('/test', 'test');
 
-//
+// Define GET route using controller
 Route::get('/students', [StudentController::class, 'index']);
