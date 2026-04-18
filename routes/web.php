@@ -11,6 +11,7 @@ Route::get('/me', function () {
     return 'Randie Syaeful Azahli';
 });
 
+// Define GET route with dynamic parameter
 Route::get('/users/{id}', function (string $id) {
     return "User profile with id: $id";
 });
