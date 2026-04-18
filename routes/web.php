@@ -15,3 +15,6 @@ Route::get('/me', function () {
 Route::get('/users/{id}', function (string $id) {
     return "User profile with id: $id";
 });
+
+// Define GET route using view routes
+Route::view('/test', 'test');
