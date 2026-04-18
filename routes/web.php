@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,3 +24,6 @@ Route::get('/product/{slug?}', function (string $slug = 'new-products') {
 
 // Define GET route using view routes
 Route::view('/test', 'test');
+
+//
+Route::get('/students', [StudentController::class, 'index']);
