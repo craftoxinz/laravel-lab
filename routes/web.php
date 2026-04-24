@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,9 @@ Route::view('/test', 'test');
 
 // Define GET route using controller
 Route::get('/students', [StudentController::class, 'index']);
+
+Route::get('/produk', [ProductController::class, 'index']);
+
+Route::get('/show-produk', [ProductController::class, 'show']);
+
+Route::get('/view-produk', [ProductController::class, 'view']);
