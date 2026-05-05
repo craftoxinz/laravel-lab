@@ -2,14 +2,14 @@ name: laravel-lab
 
 services:
     db:
-        image: mysql
+        image: mysql:8.4
         ports:
             - "${DB_PORT}:3306"
         volumes:
-            - pgdata:/var/lib/postgresql/data
+            - mysqldata:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
             - MYSQL_DATABASE=${DB_DATABASE}
 
 volumes:
-    pgdata:
+    mysqldata:
