@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.blade.php": "blade"
+    },
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "emmet.includeLanguages": {
+        "blade": "html"
+    }
+}
