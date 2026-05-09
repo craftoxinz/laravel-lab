@@ -1,31 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List</title>
-</head>
-<body>
-    <h1>Student List</h1>
-    <table border="1">
-        <tr>
-            <th>Name</th>
-            <th>Code</th>
-            <th>Major</th>
-        </tr>
-
-        @php
-            /**
-             * @var \Illuminate\Database\Eloquent\Collection<App\Models\Student> $students
-             */
-        @endphp
-        @foreach ($students as $student)
+<x-layouts.page>
+    <x-slot:pageTitle>Daftar Mahasiswa</x-slot:pageTitle>
+    <main>
+        <h1>Daftar Mahasiswa</h1>
+        <table border="1">
             <tr>
-                <td>{{ $student->name }}</td>
-                <td>{{ $student->code }}</td>
-                <td>{{ $student->major }}</td>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Jurusan</th>
+                <th>Aksi</th>
             </tr>
-        @endforeach
-    </table>
-</body>
-</html>
+
+            @php
+                /**
+                 * @var \Illuminate\Database\Eloquent\Collection<App\Models\Student> $students
+                 */
+            @endphp
+            @foreach ($students as $student)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $student->name }}</td>
+                    <td>{{ $student->code }}</td>
+                    <td>{{ $student->major }}</td>
+                    <td>
+                        <button>
+                            <a href="{{ route('students.edit', $student) }}">Edit</a>
+                        </button>
+                        <form action="{{ route('students.destroy', $student) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+        <a href="{{ route('students.create') }}">Tambah</a>
+    </main>
+</x-layouts.page>
