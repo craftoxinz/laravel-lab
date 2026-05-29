@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Student;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class StudentSeeder extends Seeder
 {
@@ -12,21 +12,6 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('students')->insert([
-            [
-                'name' => 'Jek',
-                'code' => '240414001',
-                'major' => 'IF',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Robby',
-                'code' => '240414002',
-                'major' => 'IF',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
+        Student::factory()->count(50)->create();
     }
 }
