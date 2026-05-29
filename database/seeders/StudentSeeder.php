@@ -14,14 +14,18 @@ class StudentSeeder extends Seeder
     {
         DB::table('students')->insert([
             [
-                'name' => 'Mamat',
-                'code' => '240414099',
+                'name' => 'Jek',
+                'code' => '240414001',
                 'major' => 'IF',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
-                'name' => 'Cancan',
-                'code' => '240414098',
+                'name' => 'Robby',
+                'code' => '240414002',
                 'major' => 'IF',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ]);
     }
